@@ -1,0 +1,31 @@
+.banner {
+    height: 450px;
+    width: 100%;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+
+}
+
+.banner h1 {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+.addvertisment {
+    height: 300px;
+    width: 100%;
+    object-fit: contain;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+}

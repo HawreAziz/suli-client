@@ -1,0 +1,47 @@
+
+.category_container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: column;
+    background-color: #0f0840;
+}
+
+.category_container h1 {
+    color: white;
+    margin-top: 40px;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+.shop_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    height: 250px;
+    width: 250px;
+    min-width: 250px;
+    min-height: 250px;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+}
+
+
+.shop_container:hover {
+    transform: scale(1.1);
+}
+
+
+.categories {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 80px 400px; 
+    flex-flow: row wrap;
+}
+
