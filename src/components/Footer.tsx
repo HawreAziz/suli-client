@@ -11,7 +11,7 @@ const Footer = () => {
             <h1 className="link">Categories</h1>
             <div className="link_container">
                 {categories.map((category, index) => {
-                    return <Link className="under_link" to='/home'>{category.categoryName}</Link>
+                    return <Link key={index} className="under_link" to='/home'>{category.categoryName}</Link>
                 })}
             </div>
             <Link className='link' to="/about">About</Link>
