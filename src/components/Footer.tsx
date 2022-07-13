@@ -14,7 +14,7 @@ const Footer = () => {
                     return <Link
                         key={index}
                         className="under_link"
-                        to='/home'>{category.categoryName}</Link>
+                        to='/search'>{category.categoryName}</Link>
                 })}
             </div>
             <Link className='link' to="/about">About</Link>
