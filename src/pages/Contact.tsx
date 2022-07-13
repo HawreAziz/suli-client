@@ -65,7 +65,7 @@ const Contact = () => {
                 />
             </div>
             <div className='form_container'>
-                <h1>Get in touch</h1>
+                <h1 className='form_header'>Get in touch</h1>
                 <div className='box_holder'>
                     <div className='info_container'>
                         <h1>Contact us</h1>
@@ -115,7 +115,7 @@ const Contact = () => {
                             }}
                             >
                                 <p>Email</p>
-                                < input
+                                <input
                                     className='label'
                                     required
                                     title="Type email"
@@ -162,7 +162,7 @@ const Contact = () => {
                                 display: "flex",
                                 flexDirection: 'column'
                             }}>
-                                <p>Message</p>
+                                <p style={{ marginBottom: 4 }}>Message</p>
                                 <textarea
                                     title='Type your message'
                                     minLength={20}

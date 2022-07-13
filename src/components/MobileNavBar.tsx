@@ -6,12 +6,13 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const MobileNavBar = () => {
     const [hideBar, setHideBar] = useState(true);
+
     return (
         <>
             {!hideBar && <nav className="mobile_nav_container">
-                <Link className="link" to="/home">Home</Link>
-                <Link className="link" to="/contact">Contact</Link>
-                <Link className="link" to="/about">About</Link>
+                <Link className="link" to="/home" onClick={() => setHideBar(true)}>Home</Link>
+                <Link className="link" to="/contact" onClick={() => setHideBar(true)}>Contact</Link>
+                <Link className="link" to="/about" onClick={() => setHideBar(true)}>About</Link>
                 <button className='nav_btn' onClick={() => setHideBar(true)}>
                     <CloseIcon fontSize='large' />
                 </button>

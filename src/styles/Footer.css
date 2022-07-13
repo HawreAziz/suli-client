@@ -56,3 +56,19 @@
     margin-top: 15px;
     margin-right: 4px;
 }
+
+
+@media screen and (max-width: 760px) {
+    .link_container {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .under_link {
+        margin-bottom: 5px;
+    }
+
+}
