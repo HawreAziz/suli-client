@@ -39,6 +39,7 @@ const Search = () => {
 
     return (
         <div className="search_container">
+
             <div className='search_categories'>
                 <button className="category_btn" onClick={fetchAllCategories}>All</button>
                 {getCategories()}
@@ -46,41 +47,44 @@ const Search = () => {
             <div className='card'>
                 {restaurants.map((restaurant, index) => {
                     return (
-                        <div className='card_container'>
-                            <img
-                                className="restaurant_image"
-                                src={restaurant.image} alt={restaurant.tag} />
-                            <div>
-                                <p style={
-                                    {
-                                        textTransform: 'capitalize',
-                                        color: 'rgb(87, 142, 112)'
-                                    }}>{restaurant.tag}</p>
-                                <p style={
-                                    {
-                                        fontSize: '20px',
-                                        marginTop: '-15px',
-                                        fontWeight: 'bolder'
-                                    }
-                                }>{restaurant.title}</p>
-                                <Line lineStyle={
-                                    {
-                                        width: '50px',
-                                        marginTop: '-15px',
-                                    }
-                                } />
-                                <p className='card_description'>{excerp(restaurant.description, 120)}</p>
-                                <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                    <p style={{ color: 'green' }}>Open:</p>
-                                    <p>TODO</p>
+                        <div key={index} >
+                            <div className='card_container'>
+                                <img
+                                    className="restaurant_image"
+                                    src={restaurant.image} alt={restaurant.tag} />
+                                <div>
+                                    <p style={
+                                        {
+                                            textTransform: 'capitalize',
+                                            color: 'rgb(87, 142, 112)'
+                                        }}>{restaurant.tag}</p>
+                                    <p style={
+                                        {
+                                            fontSize: '20px',
+                                            marginTop: '-15px',
+                                            fontWeight: 'bolder'
+                                        }
+                                    }>{restaurant.title}</p>
+                                    <Line lineStyle={
+                                        {
+                                            width: '50px',
+                                            marginTop: '-15px',
+                                        }
+                                    } />
+                                    <p className='card_description'>{excerp(restaurant.description, 120)}</p>
+                                    <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                        <p style={{ color: 'green' }}>Open:</p>
+                                        <p>TODO</p>
+                                    </div>
                                 </div>
                             </div>
                             {index < restaurants.length - 1 &&
-                                <Line lineStyle={{ width: '95%', alignSelf: 'center' }} />}
+                                <Line lineStyle={{ width: '95%', alignSelf: 'center', marginTop: '-5px' }} />}
                         </div>
                     );
                 })}
             </div>
+            {/* create category list  */}
             {/* create map  */}
         </div >
     )

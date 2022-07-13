@@ -85,14 +85,3 @@ div > p {
     object-fit:cover;
     object-position:50% 50%;
 }
-
-
-.line {
-    height: 3px;
-    border-style: outset;
-    border-width: 1px;
-    width: 50px; 
-    margin-left: 10px;
-    margin-top: -15px;
-    background-color: rgb(151, 188, 178);
-}

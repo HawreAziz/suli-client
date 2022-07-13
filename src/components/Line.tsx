@@ -14,7 +14,6 @@ const Line: React.FunctionComponent<Props> = ({ lineStyle }) => {
                 borderStyle: 'outset',
                 borderWidth: '1px',
                 marginLeft: '10px',
-                // marginTop: '-15px',
                 backgroundColor: 'rgb(151, 188, 178)'
             }}
         />
