@@ -2,12 +2,11 @@ import { useState, useEffect } from 'react';
 import { categories } from "../dataContainer";
 import '../styles/Search.css';
 import { restaurants } from '../data';
-import Line from '../components/Line';
+import Card from '../components/Card';
 
 
 const Search = () => {
     const [width, setWidth] = useState(window.innerWidth);
-    const [hide, setHide] = useState(false);
 
     useEffect(() => {
         window.addEventListener('resize', () => setWidth(window.innerWidth));
@@ -30,11 +29,7 @@ const Search = () => {
         console.log('fetch all categories');
     }
 
-    const excerp = (text: string, nrOfChars: number): string => {
-        return text.length > nrOfChars
-            ? text.substring(0, nrOfChars) + "..."
-            : text;
-    }
+
 
 
     return (
@@ -44,48 +39,12 @@ const Search = () => {
                 <button className="category_btn" onClick={fetchAllCategories}>All</button>
                 {getCategories()}
             </div>
-            <div className='card'>
+            <div className='search_card_container'>
                 {restaurants.map((restaurant, index) => {
-                    return (
-                        <div key={index} >
-                            <div className='card_container'>
-                                <img
-                                    className="restaurant_image"
-                                    src={restaurant.image} alt={restaurant.tag} />
-                                <div>
-                                    <p style={
-                                        {
-                                            textTransform: 'capitalize',
-                                            color: 'rgb(87, 142, 112)'
-                                        }}>{restaurant.tag}</p>
-                                    <p style={
-                                        {
-                                            fontSize: '20px',
-                                            marginTop: '-15px',
-                                            fontWeight: 'bolder'
-                                        }
-                                    }>{restaurant.title}</p>
-                                    <Line lineStyle={
-                                        {
-                                            width: '50px',
-                                            marginTop: '-15px',
-                                        }
-                                    } />
-                                    <p className='card_description'>{excerp(restaurant.description, 120)}</p>
-                                    <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                        <p style={{ color: 'green' }}>Open:</p>
-                                        <p>TODO</p>
-                                    </div>
-                                </div>
-                            </div>
-                            {index < restaurants.length - 1 &&
-                                <Line lineStyle={{ width: '95%', alignSelf: 'center', marginTop: '-5px' }} />}
-                        </div>
-                    );
+                    return <Card feature={restaurant} />
                 })}
             </div>
-            {/* create category list  */}
-            {/* create map  */}
+            {/* create pagination */}
         </div >
     )
 }

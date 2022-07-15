@@ -1,0 +1,62 @@
+
+.card_container {
+    display: flex;
+    flex-direction: column;
+    height: 380px;
+    width: 400px;
+    background-color: white;
+    box-shadow: 10px 10px 20px #888888;
+    margin: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card_image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    top: 0;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0;};
+    100% { opacity: 1};
+}
+
+.card_description {
+    padding: 10px;
+    padding-bottom: 10px;
+}
+
+
+.card_description_text {
+    width: 100%;
+    line-height: 1.3rem;
+    font-size: 1rem;
+    margin-top: -10px;
+    height: 60px;
+}
+
+.card_title {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.card_tag {
+    text-transform: capitalize;
+    color: rgb(87, 142, 112);
+    margin-top: -10px;
+}
+
+
+.card_opening_hour {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-top: -10px;
+}
+
