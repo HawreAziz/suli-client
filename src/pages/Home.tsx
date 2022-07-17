@@ -12,7 +12,9 @@ const Home = () => {
                 className="addvertisment"
                 style={{
                     backgroundImage: `url(${process.env.PUBLIC_URL}/addvertisment.png)`,
-                    backgroundSize: '100% 100%',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
                 }}
             />
         );
@@ -20,14 +22,8 @@ const Home = () => {
 
     return (
         <div style={{ width: '100%' }}>
-            <div style={{
-                backgroundImage: `url(${process.env.PUBLIC_URL}/chineesetour.jpg)`,
-                // backgroundSize: 'cover',
-                backgroundSize: '100% 100%',
-                // backgroundPosition: '100% center'
-            }}
-                className="banner" >
-                <h1>Find the Hidden Gems in Slemani</h1>
+            <div className="banner" >
+                <img src={`${process.env.PUBLIC_URL}/res5.jpg`} alt="logo" />
             </div>
             <Category />
             <Feature />

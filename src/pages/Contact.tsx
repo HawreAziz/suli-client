@@ -54,7 +54,7 @@ const Contact = () => {
     const { firstName, lastName, email, phone, company, message } = form;
     return (
         <div>
-            <div className="logo_container">
+            <div className="contact_logo_container">
                 <img
                     src={`${process.env.PUBLIC_URL}/suli-logo.png`}
                     style={{

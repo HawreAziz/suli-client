@@ -1,0 +1,51 @@
+.infodata_container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.infodata_container > p {
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+
+
+.open_addr_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.map_image {
+    width: 350px;
+    height: 305px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    background-position: center;
+    background-size: cover;
+    transition: transform .5s ease-in;
+}
+
+.map_image:hover {
+    transform: scale(1.1);
+}
+
+.image_opacity {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.opening_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+
+
+
+.opening_hours_container {
+
+}
