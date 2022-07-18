@@ -8,7 +8,7 @@ type ShopType = 'fastfood'
     | 'cinema'
     | 'event';
 
-interface Feature {
+export interface Feature {
     tag: ShopType;
     title: string;
     image: string;
@@ -17,7 +17,8 @@ interface Feature {
     location: {
         lat: number;
         long: number;
-    }
+    };
+    images: string[];
 }
 
 export const restaurants: Feature[] = [
@@ -30,7 +31,16 @@ export const restaurants: Feature[] = [
         location: {
             lat: 35.557045,
             long: 45.435944
-        }
+        },
+        images: [
+            `${process.env.PUBLIC_URL}/res9.jpg`,
+            `${process.env.PUBLIC_URL}/res10.jpg`,
+            `${process.env.PUBLIC_URL}/res11.jpg`,
+            `${process.env.PUBLIC_URL}/res12.jpg`,
+            // `${process.env.PUBLIC_URL}/res13.jpg`,
+            // `${process.env.PUBLIC_URL}/res13.jpg`,
+            // `${process.env.PUBLIC_URL}/res13.jpg`,
+        ]
     },
     {
         title: 'Latona Cafe & Bistro',
@@ -41,7 +51,8 @@ export const restaurants: Feature[] = [
         location: {
             lat: 35.557045,
             long: 45.435944
-        }
+        },
+        images: []
 
     },
     {
@@ -53,7 +64,8 @@ export const restaurants: Feature[] = [
         location: {
             lat: 35.557045,
             long: 45.435944
-        }
+        },
+        images: []
 
     },
     {
@@ -65,7 +77,8 @@ export const restaurants: Feature[] = [
         location: {
             lat: 35.557045,
             long: 45.435944
-        }
+        },
+        images: []
 
     },
     {
@@ -77,7 +90,8 @@ export const restaurants: Feature[] = [
         location: {
             lat: 35.557045,
             long: 45.435944
-        }
+        },
+        images: []
 
     },
     {
@@ -89,7 +103,8 @@ export const restaurants: Feature[] = [
         location: {
             lat: 35.557045,
             long: 45.435944
-        }
+        },
+        images: []
 
     },
     {
@@ -101,7 +116,8 @@ export const restaurants: Feature[] = [
         location: {
             lat: 35.557045,
             long: 45.435944
-        }
+        },
+        images: []
 
     },
     {
@@ -113,7 +129,8 @@ export const restaurants: Feature[] = [
         location: {
             lat: 35.557045,
             long: 45.435944
-        }
+        },
+        images: []
 
     },
 ]

@@ -5,15 +5,26 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import '../styles/Detail.css';
 import FeatureLogo from "../components/FeatureLogo";
 import Thumbnail from "../components/Thumbnail";
+import { useEffect } from 'react';
 import Line from "../components/Line";
 import InfoData from '../components/InfoData';
+import { useLocation } from "react-router-dom";
+import { Feature } from "../data";
 
+interface FeatureProps {
+    feature: Feature;
+}
 
 const Detail = () => {
     const [imageIndex, setImageIndex] = useState(0)
-    const feature = restaurants[1];
-    const images = restaurants.map((res) => res.image);
+    const { state } = useLocation() as { state: FeatureProps };
+    const { feature } = state;
+    let images = feature.images;
+    if (images.length === 0) {
+        images = restaurants.map((res) => res.image);
+    }
 
+    console.log(images);
     const nextImage = () => {
         if (imageIndex < images.length - 1) {
             setImageIndex(imageIndex + 1);
@@ -21,6 +32,7 @@ const Detail = () => {
             setImageIndex(0);
         }
     }
+
 
     const prevImage = () => {
         if (imageIndex === 0) {

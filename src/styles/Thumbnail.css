@@ -30,6 +30,7 @@
 .image_slider {
     height: 100%;
     width: 100%;
+    justify-content: flex-start;
     overflow-x: scroll;
     white-space: nowrap;
     scroll-behavior: smooth;
@@ -47,6 +48,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     min-width: 250px;
+    min-height: 250px;
     transition: transform .5s ease-in;
     border-radius: 15px;
 }
