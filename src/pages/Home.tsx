@@ -22,9 +22,16 @@ const Home = () => {
 
     return (
         <div style={{ width: '100%' }}>
-            <div className="banner" >
-                <img src={`${process.env.PUBLIC_URL}/res5.jpg`} alt="logo" />
-            </div>
+            <>
+                <img 
+                style={{
+                    width: '100%',
+                    height: '600px',
+                    objectFit: 'cover',
+                    marginTop: '5rem'
+                }}
+                src={`${process.env.PUBLIC_URL}/res5.jpg`} alt="logo" />
+            </>
             <Category />
             <Feature />
             <Advertisment />

@@ -11,7 +11,7 @@ import Search from './pages/Search';
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div className='App'>
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />

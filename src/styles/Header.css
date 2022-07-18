@@ -1,14 +1,14 @@
 .header_container {
     display: flex;
     height: 5rem;
+    width: 100%;
+    min-width: 400px;
     background: rgba(0, 0, 0, 0.5);
     align-items: center;
     justify-content: space-between;
     padding: 0 1.5rem;
     box-sizing: border-box;
     position: fixed;
-    width: 100%;
-    display: flex;
     z-index: 1;
 }
 

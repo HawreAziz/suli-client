@@ -4,3 +4,10 @@ html, body > div {
   touch-action: pan-y;
   overflow-x: hidden;
 }
+
+*{
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}

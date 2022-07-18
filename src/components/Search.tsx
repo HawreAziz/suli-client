@@ -14,13 +14,16 @@ const Search: React.FunctionComponent<Props> = ({ navigate }) => {
             color: 'white',
             alignItems: 'center',
             height: '50%',
-            width: '25%',
-            minWidth: '200px',
+            width: '100%',
+            minWidth: '100px',
+            marginRight: '40px',
+            marginLeft: '5%'
         }}>
             <input style={
                 {
                     height: '100%',
-                    width: '95%',
+                    width: '400px',
+                    minWidth: '100px',
                     borderTopLeftRadius: '10px',
                     borderBottomLeftRadius: '10px',
                     padding: '15px',

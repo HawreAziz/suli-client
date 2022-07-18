@@ -1,20 +1,58 @@
 import React from 'react'
 import "../styles/Thumbnail.css";
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+
 
 interface Props {
     images: string[]
- }
+}
 
-const Thumbnail: React.FunctionComponent<Props> = ({images}) => {
+const Thumbnail: React.FunctionComponent<Props> = ({ images }) => {
+
+    const slideLeft = () => {
+        const slider = document.getElementById('slider');
+        if (!slider) return;
+        slider.scrollLeft -= 250;
+    }
+
+    const slideRight = () => {
+        const slider = document.getElementById('slider');
+        if (!slider) return;
+        slider.scrollLeft += 250;
+    }
+
+
+
     return (
         <div className="thumbnail_container">
             <p>Pictures</p>
             <div className="thumbnail">
-                { images.map((image, index) => {
-                    return <div key={index} className='thumbnail_image'>
-                        <img src={image} alt="image" />
-                    </div>
-                })}
+                <ChevronLeftIcon
+                    onClick={slideLeft}
+                    style={{
+                        fontSize: '70px',
+                        color: 'white',
+                        borderRadius: '50px',
+                    }}
+                />
+                <div id="slider" className="image_slider">
+                    {images.map((image, index) => {
+                        return <img
+                            key={index}
+                            className="thumbnail_image"
+                            src={image}
+                            alt="image" />
+                    })}
+                </div>
+                <ChevronRightIcon
+                    onClick={slideRight}
+                    style={{
+                        fontSize: '70px',
+                        color: 'white',
+                        borderRadius: '50px',
+                    }}
+                />
             </div>
         </div>
     )
