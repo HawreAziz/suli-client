@@ -11,6 +11,7 @@ import "../styles/Thumbnail.css";
 import '../styles/Detail.css';
 import Lightbox from '../components/Lightbox';
 import ImageSlider from '../components/ImageSlider';
+import Advertisment from '../components/Advertisment';
 
 interface FeatureProps {
     feature: Feature;
@@ -82,7 +83,6 @@ const Detail = () => {
         }
     }
 
-    console.log(state)
 
     return (
         <div className="detail_container">
@@ -138,10 +138,10 @@ const Detail = () => {
                         width: '90%',
                         margin: '10px'
                     }} />
-                <InfoData location={feature.location} opening={feature.opening_hours} />
+                <InfoData location={feature.location} opening={feature.opening_hours} addr={feature.address} />
                 {/* create amenities */}
-                {/*  TODO what about advertisments */}
             </div>
+            <Advertisment />
         </div >
     )
 }

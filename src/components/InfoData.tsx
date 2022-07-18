@@ -1,3 +1,4 @@
+import { features } from 'process';
 import React from 'react'
 import { OpeningHours } from '../data';
 import "../styles/InfoData.css";
@@ -8,12 +9,13 @@ interface Props {
         long: number;
     }
     opening: OpeningHours;
+    addr: string;
 }
 
-const InfoData: React.FunctionComponent<Props> = ({ location, opening }) => {
+const InfoData: React.FunctionComponent<Props> = ({ location, opening, addr }) => {
     return (
         <div className='infodata_container'>
-            <p style={{ whiteSpace: 'nowrap'}}>Location & Hours</p>
+            <p style={{ whiteSpace: 'nowrap' }}>Location & Hours</p>
             <div className="open_addr_container">
                 <div className="opening_hours_container">
                     {
@@ -44,7 +46,9 @@ const InfoData: React.FunctionComponent<Props> = ({ location, opening }) => {
                         backgroundImage: `url(${process.env.PUBLIC_URL}/map.png)`
                     }}
                 >
-                    <div className="image_opacity" />
+                    <div className="image_opacity" >
+                        <p>{addr}</p>
+                    </div>
                 </div>
             </div>
         </div>

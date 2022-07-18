@@ -20,21 +20,17 @@ const ImageSlider: React.FunctionComponent<Props> = ({ image, prevImage, nextIma
                 onClick={prevImage}
                 style={
                     {
-                        backgroundColor: 'white',
-                        opacity: .6,
-                        fontSize: 60,
-                        color: 'red',
-                        borderRadius: 40
+                        opacity: .8,
+                        fontSize: 90,
+                        color: 'white',
 
                     }} />
             <ChevronRightIcon
                 onClick={nextImage}
                 style={{
-                    backgroundColor: 'white',
-                    opacity: .6,
-                    fontSize: 60,
-                    color: 'red',
-                    borderRadius: 40
+                    opacity: .8,
+                    fontSize: 90,
+                    color: 'white',
                 }} />
         </div>
     );

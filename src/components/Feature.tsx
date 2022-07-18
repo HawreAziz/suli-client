@@ -1,7 +1,9 @@
 import { SvgIconTypeMap } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
-import { categories, features, trimText } from "../dataContainer";
+import { categories, trimText } from "../dataContainer";
+import { restaurants as features } from '../data';
 import '../styles/Feature.css';
+import { useNavigate } from 'react-router-dom';
 
 
 interface Category {
@@ -12,8 +14,7 @@ interface Category {
 }
 
 const Feature = () => {
-
-
+    const navigate = useNavigate();
     const getFeatureInfo = (tag: string): Category => {
         return categories.filter(category => category.tag === tag)[0];
     }
@@ -22,9 +23,10 @@ const Feature = () => {
         <div className="feature_container">
             <h1>Feature</h1>
             <div className="features">
-                {features.map((feature, index) => {
+                {features.slice(0, 3).map((feature, index) => {
                     const category = getFeatureInfo(feature.tag);
                     return <div
+                    onClick={() => navigate('/detail', { state: { feature }})}
                         style={{
                             backgroundImage: `url(${feature.image})`,
                             backgroundSize: 'cover',

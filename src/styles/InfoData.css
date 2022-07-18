@@ -22,21 +22,25 @@
 
 
 .map_image {
-    /* flex: 10%; */
-    width: 350px;
-    min-width: 350px;
-    height: 350px;
-    border: 1px solid rgba(0, 0, 0, 1);
+    width: 300px;
+    min-width: 300px;
+    height: 300px;
+    align-self: center;
+    border: 2px solid rgba(0, 0, 0, .8);
     background-position: center;
     background-size: cover;
-    /* transition: transform .5s ease-in; */
 }
 
 
 .image_opacity {
+    display: flex;
+    align-items: flex-end;
+    padding: 0 10px;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .3);
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, .4);
 }
 
 .opening_box {

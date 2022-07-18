@@ -1,3 +1,4 @@
+import { StaticLifecycle } from "react";
 
 type ShopType = 'fastfood'
     | 'shopping'
@@ -14,19 +15,15 @@ interface WorkInterval {
     end: string;
 }
 
+
 export interface OpeningHours {
     [state: string]: WorkInterval;
-    // Mon: WorkInterval;
-    // Tue: WorkInterval;
-    // Wed: WorkInterval;
-    // Thu: WorkInterval;
-    // Fri: WorkInterval;
-    // Sun: WorkInterval;
 }
 
 export interface Feature {
     tag: ShopType;
     title: string;
+    address: string;
     image: string;
     description: string;
     icon: string;
@@ -45,6 +42,7 @@ export const restaurants: Feature[] = [
         tag: "fastfood",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         icon: `${process.env.PUBLIC_URL}/feature-logo.jpg`,
+        address: 'Sarchnar Road Slemani Kurdistan',
         location: {
             lat: 35.557045,
             long: 45.435944
@@ -93,6 +91,7 @@ export const restaurants: Feature[] = [
         tag: "restaurant",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         icon: `${process.env.PUBLIC_URL}/feature-logo.jpg`,
+        address: 'Sarchnar Road Slemani Kurdistan',
         location: {
             lat: 35.557045,
             long: 45.435944
@@ -135,6 +134,7 @@ export const restaurants: Feature[] = [
         tag: "cinema",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         icon: `${process.env.PUBLIC_URL}/feature-logo.jpg`,
+        address: 'Sarchnar Road Slemani Kurdistan',
         location: {
             lat: 35.557045,
             long: 45.435944
@@ -177,6 +177,7 @@ export const restaurants: Feature[] = [
         tag: "cinema",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         icon: `${process.env.PUBLIC_URL}/feature-logo.jpg`,
+        address: 'Sarchnar Road Slemani Kurdistan',
         location: {
             lat: 35.557045,
             long: 45.435944
@@ -220,6 +221,7 @@ export const restaurants: Feature[] = [
         tag: "cinema",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         icon: `${process.env.PUBLIC_URL}/feature-logo.jpg`,
+        address: 'Sarchnar Road Slemani Kurdistan',
         location: {
             lat: 35.557045,
             long: 45.435944
@@ -262,6 +264,7 @@ export const restaurants: Feature[] = [
         tag: "cinema",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         icon: `${process.env.PUBLIC_URL}/feature-logo.jpg`,
+        address: 'Sarchnar Road Slemani Kurdistan',
         location: {
             lat: 35.557045,
             long: 45.435944
@@ -304,6 +307,7 @@ export const restaurants: Feature[] = [
         tag: "cinema",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         icon: `${process.env.PUBLIC_URL}/feature-logo.jpg`,
+        address: 'Sarchnar Road Slemani Kurdistan',
         location: {
             lat: 35.557045,
             long: 45.435944
@@ -346,6 +350,7 @@ export const restaurants: Feature[] = [
         tag: "cinema",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         icon: `${process.env.PUBLIC_URL}/feature-logo.jpg`,
+        address: 'Sarchnar Road Slemani Kurdistan',
         location: {
             lat: 35.557045,
             long: 45.435944

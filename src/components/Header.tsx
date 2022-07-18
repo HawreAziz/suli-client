@@ -3,7 +3,7 @@ import '../styles/Header.css';
 import Navbar from './Navbar';
 import MobileNavBar from './MobileNavBar';
 import Search from '../components/Search';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 
@@ -21,11 +21,13 @@ const Header = () => {
 
     return (
         <header className="header_container">
+            <Link to="/home">
             <img
                 src={`${process.env.PUBLIC_URL}/suli-logo.png`}
                 alt="suli-logo"
                 className="logo"
             />
+            </Link> 
             <Search navigate={navigate} />
             <div>
                 {width > 780 ? <Navbar />
