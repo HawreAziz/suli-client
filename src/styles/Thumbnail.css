@@ -6,6 +6,7 @@
     margin-left: 10px;
     height: 400px;
     width: 95%;
+    min-width: 480px;
     margin-bottom: 50px;
 }
 
@@ -25,6 +26,7 @@
     margin-left: 10px;
     background-color: rgba(0, 0, 0);
 }
+
 
 
 .image_slider {
@@ -52,6 +54,7 @@
     transition: transform .5s ease-in;
     border-radius: 15px;
 }
+
 
 .thumbnail_image:hover {
     transform: scale(1.1);

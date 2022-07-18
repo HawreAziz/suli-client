@@ -5,10 +5,11 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 
 interface Props {
-    images: string[]
+    images: string[];
+    setLightBoxImage: (image: string) => void;
 }
 
-const Thumbnail: React.FunctionComponent<Props> = ({ images }) => {
+const Thumbnail: React.FunctionComponent<Props> = ({ images, setLightBoxImage }) => {
 
     const slideLeft = () => {
         const slider = document.getElementById('slider');
@@ -22,12 +23,10 @@ const Thumbnail: React.FunctionComponent<Props> = ({ images }) => {
         slider.scrollLeft += 250;
     }
 
-
-
     return (
         <div className="thumbnail_container">
             <p>Pictures</p>
-            <div className="thumbnail">
+            <div className="thumbnail" >
                 <ChevronLeftIcon
                     onClick={slideLeft}
                     style={{
@@ -39,6 +38,9 @@ const Thumbnail: React.FunctionComponent<Props> = ({ images }) => {
                 <div id="slider" className="image_slider">
                     {images.map((image, index) => {
                         return <img
+                            onClick={() => {
+                                setLightBoxImage(image);
+                            }}
                             key={index}
                             className="thumbnail_image"
                             src={image}

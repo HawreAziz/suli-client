@@ -1,5 +1,5 @@
 import "../styles/Card.css";
-import { Feature } from '../dataContainer';
+import { Feature } from '../data';
 import { NavigateFunction } from 'react-router-dom'
 
 interface CardProps {

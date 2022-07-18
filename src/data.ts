@@ -8,6 +8,22 @@ type ShopType = 'fastfood'
     | 'cinema'
     | 'event';
 
+
+interface WorkInterval {
+    start: string;
+    end: string;
+}
+
+export interface OpeningHours {
+    [state: string]: WorkInterval;
+    // Mon: WorkInterval;
+    // Tue: WorkInterval;
+    // Wed: WorkInterval;
+    // Thu: WorkInterval;
+    // Fri: WorkInterval;
+    // Sun: WorkInterval;
+}
+
 export interface Feature {
     tag: ShopType;
     title: string;
@@ -19,6 +35,7 @@ export interface Feature {
         long: number;
     };
     images: string[];
+    opening_hours: OpeningHours
 }
 
 export const restaurants: Feature[] = [
@@ -37,10 +54,38 @@ export const restaurants: Feature[] = [
             `${process.env.PUBLIC_URL}/res10.jpg`,
             `${process.env.PUBLIC_URL}/res11.jpg`,
             `${process.env.PUBLIC_URL}/res12.jpg`,
-            // `${process.env.PUBLIC_URL}/res13.jpg`,
-            // `${process.env.PUBLIC_URL}/res13.jpg`,
-            // `${process.env.PUBLIC_URL}/res13.jpg`,
-        ]
+            `${process.env.PUBLIC_URL}/res13.jpg`,
+        ],
+        opening_hours: {
+            Sat: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Mon: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Tue: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Wed: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Thu: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Fri: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Sun: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+        }
     },
     {
         title: 'Latona Cafe & Bistro',
@@ -52,8 +97,37 @@ export const restaurants: Feature[] = [
             lat: 35.557045,
             long: 45.435944
         },
-        images: []
-
+        images: [],
+        opening_hours: {
+            Sat: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Mon: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Tue: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Wed: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Thu: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Fri: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Sun: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+        }
     },
     {
         title: 'Latona Cafe & Bistro',
@@ -65,8 +139,37 @@ export const restaurants: Feature[] = [
             lat: 35.557045,
             long: 45.435944
         },
-        images: []
-
+        images: [],
+        opening_hours: {
+            Sat: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Mon: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Tue: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Wed: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Thu: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Fri: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Sun: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+        }
     },
     {
         title: 'Latona Cafe & Bistro',
@@ -78,7 +181,37 @@ export const restaurants: Feature[] = [
             lat: 35.557045,
             long: 45.435944
         },
-        images: []
+        images: [],
+        opening_hours: {
+            Sat: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Mon: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Tue: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Wed: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Thu: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Fri: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Sun: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+        }
 
     },
     {
@@ -91,8 +224,37 @@ export const restaurants: Feature[] = [
             lat: 35.557045,
             long: 45.435944
         },
-        images: []
-
+        images: [],
+        opening_hours: {
+            Sat: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Mon: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Tue: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Wed: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Thu: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Fri: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Sun: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+        }
     },
     {
         title: 'B3B Suli & Majdi mall',
@@ -104,8 +266,37 @@ export const restaurants: Feature[] = [
             lat: 35.557045,
             long: 45.435944
         },
-        images: []
-
+        images: [],
+        opening_hours: {
+            Sat: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Mon: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Tue: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Wed: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Thu: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Fri: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Sun: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+        }
     },
     {
         title: 'B2B Suli & Majdi mall',
@@ -117,8 +308,37 @@ export const restaurants: Feature[] = [
             lat: 35.557045,
             long: 45.435944
         },
-        images: []
-
+        images: [],
+        opening_hours: {
+            Sat: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Mon: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Tue: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Wed: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Thu: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Fri: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Sun: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+        }
     },
     {
         title: 'B2B Suli & Majdi mall',
@@ -130,7 +350,36 @@ export const restaurants: Feature[] = [
             lat: 35.557045,
             long: 45.435944
         },
-        images: []
-
+        images: [],
+        opening_hours: {
+            Sat: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Mon: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Tue: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Wed: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Thu: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Fri: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+            Sun: {
+                start: "8:00 AM",
+                end: "11:00 PM"
+            },
+        }
     },
 ]

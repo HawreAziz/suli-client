@@ -1,6 +1,6 @@
 import { categories } from "../dataContainer";
 import '../styles/Search.css';
-import { restaurants } from '../data';
+import { Feature, restaurants } from '../data';
 import Card from '../components/Card';
 import { useNavigate } from "react-router-dom";
 
@@ -21,21 +21,16 @@ const Search = () => {
         })
     }
 
-    const fetchAllCategories = () => {
-        console.log('fetch all categories');
-    }
-
-
 
     return (
         <div className="search_container">
             <div className='search_categories'>
-                <button className="category_btn" onClick={fetchAllCategories}>All</button>
+                <button className="category_btn">All</button>
                 {getCategories()}
             </div>
             <div className='search_card_container'>
-                {restaurants.map((restaurant, index) => {
-                    return  <Card key={index} feature={restaurant} navigate={navigate} />;
+                {restaurants.map((restaurant: Feature, index) => {
+                    return <Card key={index} feature={restaurant} navigate={navigate} />;
 
                 })}
             </div>

@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     width: 90%;
-    padding: 10px;
     margin-bottom: 20px;
 }
 
@@ -15,22 +14,24 @@
 
 .open_addr_container {
     display: flex;
+    width: 100%;
     flex-direction: row;
+    /* height: 400px; */
     flex-flow: wrap row;
 }
 
+
 .map_image {
+    /* flex: 10%; */
     width: 350px;
-    height: 305px;
+    min-width: 350px;
+    height: 350px;
     border: 1px solid rgba(0, 0, 0, 1);
     background-position: center;
     background-size: cover;
-    transition: transform .5s ease-in;
+    /* transition: transform .5s ease-in; */
 }
 
-.map_image:hover {
-    transform: scale(1.1);
-}
 
 .image_opacity {
     width: 100%;
@@ -40,8 +41,18 @@
 
 .opening_box {
     display: flex;
-    flex-direction: row;
+    text-align: 'left';
     justify-content: space-between;
-    margin-left: 50px;
+    padding: 0 5px;
     min-width: 400px;
+}
+
+
+.opening_hours_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 350px;
+    margin-right: 20px;
 }

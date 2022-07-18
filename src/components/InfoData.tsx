@@ -1,4 +1,5 @@
 import React from 'react'
+import { OpeningHours } from '../data';
 import "../styles/InfoData.css";
 
 interface Props {
@@ -6,13 +7,33 @@ interface Props {
         lat: number;
         long: number;
     }
+    opening: OpeningHours;
 }
 
-const InfoData: React.FunctionComponent<Props> = ({ location }) => {
+const InfoData: React.FunctionComponent<Props> = ({ location, opening }) => {
     return (
         <div className='infodata_container'>
-            <p>Location & Hours</p>
+            <p style={{ whiteSpace: 'nowrap'}}>Location & Hours</p>
             <div className="open_addr_container">
+                <div className="opening_hours_container">
+                    {
+
+                        Object.keys(opening).map((day, index) => {
+                            const work_time = opening[day];
+                            return (
+                                <div key={index} className="opening_box">
+                                    <p style={{ fontSize: 20, fontWeight: 'bold' }}>{day}</p>
+                                    <p style={{ fontSize: 20, textAlign: 'left' }}>
+                                        <span style={{ color: 'green' }}>
+                                            {work_time.start}&nbsp;</span>
+                                        - {work_time.end}
+                                    </p>
+                                </div>
+                            );
+
+                        })
+                    }
+                </div>
                 <div
                     className='map_image'
                     onClick={() => {
@@ -24,23 +45,6 @@ const InfoData: React.FunctionComponent<Props> = ({ location }) => {
                     }}
                 >
                     <div className="image_opacity" />
-                </div>
-                <div className="opening_hours_container">
-                    {
-                        ['Sat', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sun'].map((day, index) => {
-                            return (
-                                <div key={index} className="opening_box">
-                                    <p style={{ fontSize: 20 }}>{day}</p>
-                                    <p style={{ fontSize: 20}}>
-                                        <span style={{ color: 'green' }}>
-                                            &emsp;&emsp;8:00 AM&nbsp;</span>
-                                        - 11:00 PM
-                                    </p>
-                                </div>
-                            );
-
-                        })
-                    }
                 </div>
             </div>
         </div>
