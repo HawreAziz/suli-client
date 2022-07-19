@@ -21,7 +21,7 @@ const InfoData: React.FunctionComponent<Props> = ({ location, opening, addr }) =
                     {
 
                         Object.keys(opening).map((day, index) => {
-                            const work_time = opening[day];
+                            const work_time = opening[day as keyof OpeningHours];
                             return (
                                 <div key={index} className="opening_box">
                                     <p style={{ fontSize: 20, fontWeight: 'bold' }}>{day}</p>

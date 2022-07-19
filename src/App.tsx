@@ -22,7 +22,6 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/detail' element={<Detail />} />
           <Route path='/search' element={<Search />} />
-          <Route path='/search/:tag' element={<Search />} />
         </Routes>
         <Footer />
       </div>

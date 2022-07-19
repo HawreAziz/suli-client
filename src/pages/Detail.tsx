@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { restaurants } from '../data';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import FeatureLogo from "../components/FeatureLogo";
@@ -11,7 +10,11 @@ import "../styles/Thumbnail.css";
 import '../styles/Detail.css';
 import Lightbox from '../components/Lightbox';
 import ImageSlider from '../components/ImageSlider';
+import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import Advertisment from '../components/Advertisment';
+import { getCurrentWeekDay } from "../dataContainer";
+import time from "../hooks/time";
+
 
 interface FeatureProps {
     feature: Feature;
@@ -22,10 +25,7 @@ const Detail = () => {
     const { state } = useLocation() as { state: FeatureProps };
     const [lightboxImage, setLightboxImage] = useState<string | null>(null);
     const { feature } = state;
-    let images = feature.images;
-    if (images.length === 0) {
-        images = restaurants.map((res) => res.image);
-    }
+    const images = [feature.image, ...feature.images];
 
     const slideLeft = () => {
         const slider = document.getElementById('slider');
@@ -95,7 +95,14 @@ const Detail = () => {
                 leftLightBox={leftLightBox}
             />
             <div className="detail_body_container">
-
+                <div className="work_time">
+                    <WatchLaterIcon
+                        style={{
+                            fontSize: 50
+                        }}
+                    />
+                    <p>{time(getCurrentWeekDay(feature))}</p>
+                </div>
                 <div className="detail_description">
                     <p>{feature.description}</p>
                 </div>

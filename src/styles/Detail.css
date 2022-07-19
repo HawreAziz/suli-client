@@ -25,9 +25,26 @@
     background-size: cover;
     justify-content: space-between;
     align-items: center;
-    /* padding-left: 10px; */
-    /* padding-right: 10px; */
     transition: all .5s ease-in;
+}
+
+
+.work_time {
+    display: flex;
+    height: 100px;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    color: rgb(141, 141, 163);
+    font-style: italic;
+    margin-top: 25px;
+    margin-bottom: 60px
+}
+
+.work_time > p {
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 15px;
 }
 
 

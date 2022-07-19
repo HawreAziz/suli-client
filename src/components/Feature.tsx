@@ -1,9 +1,11 @@
+import { useEffect } from 'react';
 import { SvgIconTypeMap } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { categories, trimText } from "../dataContainer";
-import { restaurants as features } from '../data';
-import '../styles/Feature.css';
 import { useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
+import '../styles/Feature.css';
+import { getRatedFeatures } from '../redux/reducers/features';
 
 
 interface Category {
@@ -15,15 +17,24 @@ interface Category {
 
 const Feature = () => {
     const navigate = useNavigate();
+    const { ratedFeatures } = useAppSelector(state => state.features);
+    const dispatch = useAppDispatch();
+
+
     const getFeatureInfo = (tag: string): Category => {
         return categories.filter(category => category.tag === tag)[0];
     }
+
+
+    useEffect(() => {
+        dispatch(getRatedFeatures());
+    }, []);
 
     return (
         <div className="feature_container">
             <h1>Feature</h1>
             <div className="features">
-                {features.slice(0, 3).map((feature, index) => {
+                {ratedFeatures.slice(0, 3).map((feature, index) => {
                     const category = getFeatureInfo(feature.tag);
                     return <div
                     onClick={() => navigate('/detail', { state: { feature }})}

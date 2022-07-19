@@ -1,22 +1,25 @@
 import { useEffect, useState } from 'react';
 import { categories } from "../dataContainer";
 import '../styles/Search.css';
-import { Feature, restaurants } from '../data';
+import { Feature } from '../data';
 import Card from '../components/Card';
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAppSelector, useAppDispatch } from '../hooks/redux-hooks';
+import { getFeatures, getFeatureByTag } from '../redux/reducers/features';
 
 
 const Search = () => {
-    const [features, setFeatures] = useState(restaurants);
+    const { features, tag } = useAppSelector(state => state.features);
+    const dispatch = useAppDispatch();
     const navigate = useNavigate();
-    const { tag } = useParams<{ tag: string }>();
+
 
 
     useEffect(() => {
-        if (tag) {
-            setFeatures(features.filter(feature => feature.tag === tag));
+        if (!tag) {
+            dispatch(getFeatures());
         }
-    }, [tag])
+    }, [tag]);
 
 
 
@@ -28,7 +31,7 @@ const Search = () => {
                 <p
                     key={index}
                     style={{ color: category.bgColor, whiteSpace: 'nowrap' }}
-                    onClick={() => setFeatures(restaurants.filter(res => res.tag === category.tag))}
+                    onClick={() => dispatch(getFeatureByTag(category.tag))}
                 >
                     {category.categoryName}
                 </p>
@@ -40,7 +43,9 @@ const Search = () => {
     return (
         <div className="search_container">
             <div className='search_categories'>
-                <button className="category_btn" onClick={() => setFeatures(restaurants)}>All</button>
+                <button className="category_btn"
+                    onClick={() => dispatch(getFeatures())}
+                >All</button>
                 {getCategories()}
             </div>
             {

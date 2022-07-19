@@ -19,7 +19,6 @@ const About = () => {
         }
     }, [width, height]);
 
-    console.log(height);
     return (
         <div>
             <div className="about_box_1">

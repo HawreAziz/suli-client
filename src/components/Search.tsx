@@ -1,5 +1,8 @@
+import React, { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { NavigateFunction } from 'react-router-dom';
+import { useAppDispatch } from '../hooks/redux-hooks';
+import { getFeaturesByName } from '../redux/reducers/features';
 import '../styles/SearchBar.css';
 
 interface Props {
@@ -8,6 +11,14 @@ interface Props {
 
 
 const Search: React.FunctionComponent<Props> = ({ navigate }) => {
+    const [searchText, setSearchText] = useState("");
+    const dispatch = useAppDispatch();
+
+    const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        event.preventDefault();
+        setSearchText(event.target.value);
+    }
+
     return (
         <div style={{
             display: 'flex',
@@ -19,15 +30,18 @@ const Search: React.FunctionComponent<Props> = ({ navigate }) => {
             marginRight: '40px',
             marginLeft: '5%'
         }}>
-            <input style={
-                {
-                    height: '100%',
-                    width: '400px',
-                    minWidth: '100px',
-                    borderTopLeftRadius: '10px',
-                    borderBottomLeftRadius: '10px',
-                    padding: '15px',
-                }}
+            <input
+                value={searchText}
+                onChange={onInputChange}
+                style={
+                    {
+                        height: '100%',
+                        width: '400px',
+                        minWidth: '100px',
+                        borderTopLeftRadius: '10px',
+                        borderBottomLeftRadius: '10px',
+                        padding: '15px',
+                    }}
                 placeholder='Pizza, Break fast, Family mall...etc' />
 
             <SearchIcon style={
@@ -39,7 +53,11 @@ const Search: React.FunctionComponent<Props> = ({ navigate }) => {
                     borderTopRightRadius: '10px',
                     borderBottomRightRadius: '10px'
                 }}
-                onClick={() => navigate('/search')}
+                onClick={() => {
+                    dispatch(getFeaturesByName({ name: searchText}))
+                    // setSearchText("");
+                    navigate('/search')
+                }}
             />
         </div>
     )

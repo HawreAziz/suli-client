@@ -1,6 +1,9 @@
 import "../styles/Card.css";
 import { Feature } from '../data';
 import { NavigateFunction } from 'react-router-dom'
+import time from '../hooks/time';
+import WatchLaterIcon from '@mui/icons-material/WatchLater';
+import { getCurrentWeekDay, trimText } from '../dataContainer';
 
 interface CardProps {
     feature: Feature;
@@ -8,11 +11,7 @@ interface CardProps {
 }
 
 const Card: React.FunctionComponent<CardProps> = ({ feature, navigate }) => {
-    const excerp = (text: string, nrOfChars: number): string => {
-        return text.length > nrOfChars
-            ? text.substring(0, nrOfChars) + "..."
-            : text;
-    }
+
     return (
         <div
             className='card_container'
@@ -31,11 +30,11 @@ const Card: React.FunctionComponent<CardProps> = ({ feature, navigate }) => {
                 <div className='card_description'>
                     <p className="card_title">{feature.title}</p>
                     <p className="card_tag">{feature.tag}</p>
-                    <p className="card_description_text">{excerp(feature.description, 120)}</p>
+                    <p className="card_description_text">{trimText(feature.description, 120)}</p>
                 </div>
                 <div className="card_opening_hour">
-                    <p style={{ color: 'green' }}>Open:</p>
-                    <p>TODO</p>
+                    <WatchLaterIcon style={{ fontSize: 30, marginRight: 5, color: 'rgb(141, 141, 163)' }} />
+                    <p>{time(getCurrentWeekDay(feature))}</p>
                 </div>
             </div>
         </div>

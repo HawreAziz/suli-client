@@ -1,20 +1,29 @@
 import { Link } from 'react-router-dom';
 import { categories } from '../dataContainer';
 import CopyrightIcon from '@mui/icons-material/Copyright';
+import { useAppDispatch } from '../hooks/redux-hooks';
+import { useNavigate } from 'react-router-dom';
+import { getFeatureByTag } from '../redux/reducers/features';
 import "../styles/Footer.css";
 
 
 const Footer = () => {
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+
     return (
         <div className="footer_container">
             <Link className="link" to="/home">Home</Link>
             <h1 className="link">Categories</h1>
             <div className="link_container">
                 {categories.map((category, index) => {
-                    return <Link
+                    return <button
+                    onClick={() => {
+                        dispatch(getFeatureByTag(category.tag));
+                        navigate('/search');
+                    }}
                         key={index}
-                        className="under_link"
-                        to='/search'>{category.categoryName}</Link>
+                        className="category_link">{category.categoryName}</button>
                 })}
             </div>
             <Link className='link' to="/about">About</Link>

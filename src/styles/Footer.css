@@ -31,15 +31,18 @@
     align-items: center;
 }
 
-.under_link {
+.category_link {
     color: cadetblue;
+    background-color: transparent;;
+    outline: none;
+    border: none;
     text-decoration: none;
     display: flex;
     margin-right: 10px;
     transition: all 0.5s ease-in;
 }
 
-.under_link:hover {
+.category_link:hover {
     color: burlywood;
     transform: scale(1.1);
 }

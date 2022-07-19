@@ -6,6 +6,8 @@ import RestaurantIcon from '@mui/icons-material/Restaurant';
 import ParkIcon from '@mui/icons-material/Park';
 import MovieIcon from '@mui/icons-material/Movie';
 import EventIcon from '@mui/icons-material/Event';
+import { Feature, OpeningHours } from './data';
+import { deflateSync } from 'zlib';
 
 
 type ShopType = 'fastfood'
@@ -17,33 +19,7 @@ type ShopType = 'fastfood'
     | 'cinema'
     | 'event';
 
-export interface Feature {
-    tag: ShopType;
-    title: string;
-    image: string;
-    description: string;
-}
 
-export const features: Feature[] = [
-    {
-        title: 'Latona Cafe & Bistro',
-        image: `${process.env.PUBLIC_URL}/res1.jpg`,
-        tag: "fastfood",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
-        title: 'Latona Cafe & Bistro',
-        image: `${process.env.PUBLIC_URL}/res2.jpg`,
-        tag: "restaurant",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
-        title: 'Latona Cafe & Bistro',
-        image: `${process.env.PUBLIC_URL}/res3.jpg`,
-        tag: "cinema",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    }
-]
 
 
 export const categories = [
@@ -101,4 +77,15 @@ export const categories = [
 
 export const trimText = (text: string, len: number = 30): string => {
     return text.length > len ? `${text.substring(0, len)}...` : text;
+}
+
+
+export const getCurrentWeekDay = (feature: Feature) => {
+    const weekKey = new Date().toDateString().split(" ")[0];
+    return feature.opening_hours[weekKey as keyof OpeningHours];
+}
+
+export const getNextDay = (date: Date): string => {
+    date.setDate(date.getDate() + 1);
+    return date.toDateString().split(" ")[0];
 }
