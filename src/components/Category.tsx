@@ -1,5 +1,6 @@
 import "../styles/Category.css";
 import { categories } from '../dataContainer';
+import { Link } from 'react-router-dom';
 
 
 function Category() {
@@ -9,12 +10,16 @@ function Category() {
             <div className="categories" >
                 {
                     categories.map((category, index) => {
-                        return <div key={index}
-                            style={{ background: category.bgColor }}
-                            className='shop_container'>
-                            <category.icon sx={{ fontSize: '60px' }} />
-                            <h1>{category.categoryName}</h1>
-                        </div>
+                        return (
+                            <Link key={index} to={`/search/${category.tag}`} style={{ textDecoration: 'none'}} >
+                                <div
+                                    style={{ background: category.bgColor }}
+                                    className='shop_container'>
+                                    <category.icon sx={{ fontSize: '60px' }} />
+                                    <h1>{category.categoryName}</h1>
+                                </div>
+                            </Link>
+                        )
                     })
                 }
             </div>

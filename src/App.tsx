@@ -12,7 +12,7 @@ import Search from './pages/Search';
 function App() {
   return (
     <BrowserRouter>
-    <ScrollToTop />
+      <ScrollToTop />
       <div className='App'>
         <Header />
         <Routes>
@@ -22,6 +22,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/detail' element={<Detail />} />
           <Route path='/search' element={<Search />} />
+          <Route path='/search/:tag' element={<Search />} />
         </Routes>
         <Footer />
       </div>

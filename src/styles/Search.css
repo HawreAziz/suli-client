@@ -1,7 +1,9 @@
 
 .search_container {
-    height: fit-content;
-    margin-bottom: 0;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    /* margin-bottom: 0; */
     padding-top: 80px;
 }
 
@@ -13,12 +15,13 @@
 .search_categories {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
     position: fixed;
     align-items: center;
     background-color: rgb(188, 210, 204);
-    padding: 5px 0px;
-    overflow-x: scroll;
+    padding: 5px 100px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
     width: 100%;
 }
 
