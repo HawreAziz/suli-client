@@ -16,7 +16,6 @@
     display: flex;
     width: 100%;
     flex-direction: row;
-    /* height: 400px; */
     flex-flow: wrap row;
 }
 
@@ -44,11 +43,8 @@
 }
 
 .opening_box {
-    display: flex;
-    text-align: 'left';
-    justify-content: space-between;
-    padding: 0 5px;
-    min-width: 400px;
+    display: grid;
+    grid-template-columns: 50px 200px;
 }
 
 
@@ -58,5 +54,5 @@
     justify-content: center;
     align-items: flex-start;
     height: 350px;
-    margin-right: 20px;
+    margin-right: 10px;
 }

@@ -121,7 +121,7 @@ export const features: Feature[] = [
         image: `${process.env.PUBLIC_URL}/ivy1.jpeg`,
         tag: "restaurant",
         description: "Craft food. Ambient environment. Your ideal dining destination.",
-        icon: `${process.env.PUBLIC_URL}/ivyLogo.PNG`,
+        icon: `${process.env.PUBLIC_URL}/ivyLogo.png`,
         address: 'Sarchnar Road Slemani Kurdistan',
         location: {
             lat: 35.557045,
@@ -1319,6 +1319,18 @@ export const ratedFeatures: Feature[] = [
 ]
 
 
+
 export const addvertisments = [
-    `${process.env.PUBLIC_URL}/addvertisment.png`,
+    {
+        image: `${process.env.PUBLIC_URL}/addvertisment.png`,
+        link: ""
+    },
+    {
+        image: `${process.env.PUBLIC_URL}/yallashot1.jpg`,
+        link: ""
+    },
+    {
+        image: `${process.env.PUBLIC_URL}/yallashot2.jpg`,
+        link: ""
+    }
 ]

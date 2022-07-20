@@ -42,7 +42,7 @@
 }
 
 .work_time > p {
-    font-size: 30px;
+    font-size: 20px;
     margin-left: 10px;
     margin-top: 15px;
 }
@@ -62,13 +62,21 @@
 .lightbox_image {
     display: flex;
     flex-direction: row;
-    width: 600px;
-    height: 600px;
-    min-width: 300px;
-    background-size: cover;
+    width: calc(100vw / 2);
+    height: calc(100vw / 2);
+    min-width: 200px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    margin-bottom: 20px;
+    margin-bottom: 150px;
     transition: all .5s ease-in-out;
+}
+
+
+@media screen and (max-width: 600px) {
+    .lightbox_image{
+        width: calc(100vw / 1.02);
+        height: calc(100vw / 1.02);
+    }
 }
 
 

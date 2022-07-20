@@ -31,7 +31,6 @@ const Footer = () => {
             <div className="copyright">
                 <p>Copyright</p>
                 <CopyrightIcon sx={{ fontSize: '15px' }} />
-                <p>{process.env.LAST_UPDATED}</p>
                 <p>2022</p>
             </div>
         </div>

@@ -23,9 +23,9 @@ interface FeatureProps {
 const Detail = () => {
     const [imageIndex, setImageIndex] = useState(0)
     const { state } = useLocation() as { state: FeatureProps };
-    const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+    const [lightboxIndex, setLightboxIndex] = useState(-1);
     const { feature } = state;
-    const images = [feature.image, ...feature.images];
+    const { images } = feature;
 
     const slideLeft = () => {
         const slider = document.getElementById('slider');
@@ -58,28 +58,19 @@ const Detail = () => {
     }
 
     const rightLigthBox = () => {
-        if (!lightboxImage) {
-            return;
-        }
-        const lightboxIndex = images.findIndex(image => image == lightboxImage);
-
         if (lightboxIndex < images.length - 1) {
-            setLightboxImage(images[lightboxIndex + 1]);
+            console.log('next image');
+            setLightboxIndex(lightboxIndex + 1);
         } else {
-            setLightboxImage(images[0]);
+            setLightboxIndex(0);
         }
     }
 
     const leftLightBox = () => {
-        if (!lightboxImage) {
-            return;
-        }
-        const lightboxIndex = images.findIndex(image => image == lightboxImage);
-
         if (lightboxIndex === 0) {
-            setLightboxImage(images[images.length - 1]);
+            setLightboxIndex(images.length - 1);
         } else {
-            setLightboxImage(images[lightboxIndex - 1]);
+            setLightboxIndex(lightboxIndex - 1);
         }
     }
 
@@ -89,8 +80,8 @@ const Detail = () => {
             <ImageSlider image={images[imageIndex]} prevImage={prevImage} nextImage={nextImage} />
             <FeatureLogo logoDetail={{ icon: feature.icon, title: feature.title }} />
             <Lightbox
-                lightboxImage={lightboxImage}
-                setLightboxImage={setLightboxImage}
+                lightboxImage={images[lightboxIndex]}
+                setLightboxIndex={setLightboxIndex}
                 rightLightBox={rightLigthBox}
                 leftLightBox={leftLightBox}
             />
@@ -98,7 +89,7 @@ const Detail = () => {
                 <div className="work_time">
                     <WatchLaterIcon
                         style={{
-                            fontSize: 50
+                            fontSize: 40
                         }}
                     />
                     <p>{time(getCurrentWeekDay(feature))}</p>
@@ -121,7 +112,7 @@ const Detail = () => {
                             {images.map((image, index) => {
                                 return <img
                                     onClick={() => {
-                                        setLightboxImage(image);
+                                        setLightboxIndex(index);
                                     }}
                                     key={index}
                                     className="thumbnail_image"

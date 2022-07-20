@@ -24,8 +24,8 @@ const InfoData: React.FunctionComponent<Props> = ({ location, opening, addr }) =
                             const work_time = opening[day as keyof OpeningHours];
                             return (
                                 <div key={index} className="opening_box">
-                                    <p style={{ fontSize: 20, fontWeight: 'bold' }}>{day}</p>
-                                    <p style={{ fontSize: 20, textAlign: 'left' }}>
+                                    <p style={{ fontSize: 20, fontWeight: 'bold', marginRight: '20px' }}>{day}</p>
+                                    <p style={{ fontSize: 20, textAlign: 'right', }}>
                                         <span style={{ color: 'green' }}>
                                             {work_time.start}&nbsp;</span>
                                         - {work_time.end}

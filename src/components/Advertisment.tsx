@@ -11,15 +11,17 @@ const Advertisment: React.FunctionComponent = () => {
         dispatch(getAdvertisment())
     }, [])
 
+    console.log(addvertisedImage.link)
     return (
         <div
-            onClick={() => console.log('go to addvertisment')}
             className="addvertisment"
+            onClick={() => {
+                if (addvertisedImage.link) {
+                    window.open(addvertisedImage.link);
+                }
+            }}
             style={{
-                backgroundImage: `url(${addvertisedImage})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
+                backgroundImage: `url(${addvertisedImage.image})`,
             }}
         />
     );

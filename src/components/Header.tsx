@@ -22,12 +22,12 @@ const Header = () => {
     return (
         <header className="header_container">
             <Link to="/home">
-            <img
-                src={`${process.env.PUBLIC_URL}/suli-logo.png`}
-                alt="suli-logo"
-                className="logo"
-            />
-            </Link> 
+                <img
+                    src={`${process.env.PUBLIC_URL}/suli-logo.png`}
+                    alt="suli-logo"
+                    className="logo"
+                />
+            </Link>
             <Search navigate={navigate} />
             <div>
                 {width > 780 ? <Navbar />

@@ -20,12 +20,9 @@
 
 
 .addvertisment {
-    height: 300px;
+    height: calc(100vw / 3.2);
     width: 100%;
-    object-fit: contain;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -o-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: pixelated;
-    -ms-interpolation-mode: nearest-neighbor;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }

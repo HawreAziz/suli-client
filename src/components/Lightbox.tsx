@@ -4,12 +4,12 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 interface Props {
     lightboxImage: string | null;
-    setLightboxImage: (image: string) => void;
+    setLightboxIndex: (index: number) => void;
     rightLightBox: () => void;
     leftLightBox: () => void;
 }
 
-const Lightbox: React.FunctionComponent<Props> = ({ lightboxImage, setLightboxImage, rightLightBox, leftLightBox }) => {
+const Lightbox: React.FunctionComponent<Props> = ({ lightboxImage, setLightboxIndex, rightLightBox, leftLightBox }) => {
     return (lightboxImage
         ? <div className="lightbox" >
             <div style={{
@@ -26,7 +26,7 @@ const Lightbox: React.FunctionComponent<Props> = ({ lightboxImage, setLightboxIm
                     }}>
                     <ChevronLeftIcon style={{ fontSize: 60, color: 'white', alignSelf: 'center' }} />
                 </div>
-                <div onClick={() => setLightboxImage("")} className="middle_lightbox" style={{
+                <div onClick={() => setLightboxIndex(-1)} className="middle_lightbox" style={{
                     flex: '90%',
                     height: '100%'
                 }}></div>

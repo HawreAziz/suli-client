@@ -7,7 +7,10 @@ interface FeatureState {
     features: Feature[];
     ratedFeatures: Feature[];
     tag: string;
-    addvertisedImage: string;
+    addvertisedImage: {
+        image: string;
+        link: string;
+    };
 }
 
 
@@ -15,7 +18,10 @@ const initialState: FeatureState = {
     features: [],
     tag: "",
     ratedFeatures: [],
-    addvertisedImage: '',
+    addvertisedImage: {
+        image: '',
+        link: ''
+    },
 }
 
 

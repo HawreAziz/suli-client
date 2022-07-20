@@ -3,6 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { NavigateFunction } from 'react-router-dom';
 import { useAppDispatch } from '../hooks/redux-hooks';
 import { getFeaturesByName } from '../redux/reducers/features';
+import "../styles/SearchInput.css"
 import '../styles/SearchBar.css';
 
 interface Props {
@@ -20,45 +21,30 @@ const Search: React.FunctionComponent<Props> = ({ navigate }) => {
     }
 
     return (
-        <div style={{
-            display: 'flex',
-            color: 'white',
-            alignItems: 'center',
-            height: '50%',
-            width: '100%',
-            minWidth: '100px',
-            marginRight: '40px',
-            marginLeft: '5%'
-        }}>
+        <div className='search_input_container'>
             <input
                 value={searchText}
                 onChange={onInputChange}
-                style={
-                    {
-                        height: '100%',
-                        width: '400px',
-                        minWidth: '100px',
-                        borderTopLeftRadius: '10px',
-                        borderBottomLeftRadius: '10px',
-                        padding: '15px',
-                    }}
+                className="input_field"
                 placeholder='Pizza, Break fast, Family mall...etc' />
 
-            <SearchIcon style={
-                {
-                    fontSize: '40px',
-                    backgroundColor: 'red',
-                    height: '95%',
-                    padding: '3px',
-                    borderTopRightRadius: '10px',
-                    borderBottomRightRadius: '10px'
-                }}
-                onClick={() => {
-                    dispatch(getFeaturesByName({ name: searchText}))
-                    // setSearchText("");
-                    navigate('/search')
-                }}
-            />
+            <div className="search_icon">
+                <SearchIcon style={
+                    {
+                        fontSize: '40px',
+                        // backgroundColor: 'red',
+                        height: '100%',
+                        padding: '3px',
+                        // borderTopRightRadius: '10px',
+                        // borderBottomRightRadius: '10px'
+                    }}
+                    onClick={() => {
+                        dispatch(getFeaturesByName({ name: searchText }))
+                        setSearchText("");
+                        navigate('/search')
+                    }}
+                />
+            </div>
         </div>
     )
 }

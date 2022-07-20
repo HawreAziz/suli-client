@@ -14,7 +14,10 @@
 
 
 .logo {
-    height: 40px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-right: 10px;
 }
 
 .nav_container {
@@ -60,5 +63,5 @@
     display: block;
     position: absolute;
     top: 0.5rem;
-    right: 1rem;
+    right: .1rem; 
 }
