@@ -29,6 +29,9 @@ export default (workTime: { start: string, end: string }) => {
             }
         }
     } catch (error) {
+        if (!endTime) {
+            return `Open: ${startTime}`
+        }
         return `Open: ${startTime} - ${endTime}`;
     }
 }

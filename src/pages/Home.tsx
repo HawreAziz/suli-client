@@ -19,8 +19,8 @@ const Home = () => {
                     src={`${process.env.PUBLIC_URL}/res5.jpg`} alt="logo" />
             </>
             <Category />
-            <Feature />
             <Advertisment />
+            <Feature />
         </div >
     )
 }

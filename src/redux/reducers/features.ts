@@ -7,10 +7,10 @@ interface FeatureState {
     features: Feature[];
     ratedFeatures: Feature[];
     tag: string;
-    addvertisedImage: {
-        image: string;
+    addvertisedImages: {
+        url: string;
         link: string;
-    };
+    }[];
 }
 
 
@@ -18,10 +18,7 @@ const initialState: FeatureState = {
     features: [],
     tag: "",
     ratedFeatures: [],
-    addvertisedImage: {
-        image: '',
-        link: ''
-    },
+    addvertisedImages: [],
 }
 
 
@@ -54,8 +51,7 @@ const featureSlice = createSlice({
         },
 
         getAdvertisment(state: FeatureState) {
-            const randomIndex = Math.floor(Math.random() * addvertisments.length);
-            state.addvertisedImage = addvertisments[randomIndex];
+            state.addvertisedImages = addvertisments;
         }
     },
     extraReducers: {}

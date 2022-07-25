@@ -1322,15 +1322,15 @@ export const ratedFeatures: Feature[] = [
 
 export const addvertisments = [
     {
-        image: `${process.env.PUBLIC_URL}/addvertisment.png`,
-        link: ""
+        url: `${process.env.PUBLIC_URL}/addvertisment.png`,
+        link: "https://www.google.se/"
     },
     {
-        image: `${process.env.PUBLIC_URL}/yallashot1.jpg`,
-        link: ""
+        url: `${process.env.PUBLIC_URL}/yallashot1.jpg`,
+        link: "https://www.yahoo.com"
     },
     {
-        image: `${process.env.PUBLIC_URL}/yallashot2.jpg`,
-        link: ""
+        url: `${process.env.PUBLIC_URL}/yallashot2.jpg`,
+        link: "https://www.facebook.com"
     }
 ]

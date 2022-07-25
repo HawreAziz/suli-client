@@ -15,7 +15,7 @@ interface Props {
 const InfoData: React.FunctionComponent<Props> = ({ location, opening, addr }) => {
     return (
         <div className='infodata_container'>
-            <p style={{ whiteSpace: 'nowrap' }}>Location & Hours</p>
+            <p >Location & Hours</p>
             <div className="open_addr_container">
                 <div className="opening_hours_container">
                     {
