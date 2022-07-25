@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
 import { getAdvertisment } from '../redux/reducers/features';
-import SimpleImageSlider from 'react-simple-image-slider';
 
 
 const Advertisment: React.FunctionComponent = () => {
