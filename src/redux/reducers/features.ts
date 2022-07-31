@@ -8,6 +8,7 @@ interface FeatureState {
     ratedFeatures: Feature[];
     tag: string;
     addvertisedImages: {
+        name: string;
         url: string;
         link: string;
     }[];

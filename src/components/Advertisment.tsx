@@ -1,13 +1,14 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
 import { getAdvertisment } from '../redux/reducers/features';
+import { useAnalyticsEventTracker } from '../hooks/useEventTracker';
 
 
 const Advertisment: React.FunctionComponent = () => {
     const dispatch = useAppDispatch();
     const [index, setIndex] = useState(1);
-    const timeoutRef = useRef(null);
     const { addvertisedImages } = useAppSelector(state => state.features);
+    const eventTracker = useAnalyticsEventTracker('Addvertisements');
 
     useEffect(() => {
         dispatch(getAdvertisment());
@@ -27,7 +28,7 @@ const Advertisment: React.FunctionComponent = () => {
         return null;
     }
 
-    console.log(addvertisedImages);
+    const { url, link, name } = addvertisedImages[index];
     return (
         <div style={{
             display: 'flex',
@@ -36,10 +37,13 @@ const Advertisment: React.FunctionComponent = () => {
             margin: '50px 0'
         }}>
             <div
-                onClick={() => window.open(addvertisedImages[index].link)}
+                onClick={() => {
+                    eventTracker(name);
+                    window.open(link);
+                }}
                 className='addvertisment'
                 style={{
-                    backgroundImage: `url(${addvertisedImages[index].url})`,
+                    backgroundImage: `url(${url})`,
                 }}
             >
             </div>

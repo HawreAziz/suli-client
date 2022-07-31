@@ -1320,16 +1320,19 @@ export const ratedFeatures: Feature[] = [
 
 
 
-export const addvertisments = [
+export const addvertisments: { name: string; url: string; link: string }[] = [
     {
+        name: "Website add",
         url: `${process.env.PUBLIC_URL}/addvertisment.png`,
         link: "https://www.google.se/"
     },
     {
+        name: "yallashot-1",
         url: `${process.env.PUBLIC_URL}/yallashot1.jpg`,
         link: "https://www.yahoo.com"
     },
     {
+        name: "yallashot-2",
         url: `${process.env.PUBLIC_URL}/yallashot2.jpg`,
         link: "https://www.facebook.com"
     }
